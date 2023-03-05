@@ -49,15 +49,15 @@
                             WHERE c.id = :category_id";
                     }
                 else {
-                    $query = "SELECT
-                    q.id, 
-                    q.quote,
-                    c.category as Category,
-                    a.author as Author                
-                    FROM " . $this->table ." q
-                    INNER JOIN authors a on q.author_id = a.id
-                    INNER JOIN categories c on q.category_id = c.id 
-                    ORDER BY q.id ASC";
+                        $query = "SELECT
+                            q.id, 
+                            q.quote,
+                            c.category as Category,
+                            a.author as Author                
+                            FROM " . $this->table ." q
+                            INNER JOIN authors a on q.author_id = a.id
+                            INNER JOIN categories c on q.category_id = c.id 
+                            ORDER BY q.id ASC";
                 }
     
             $stmt = $this->conn->prepare($query);

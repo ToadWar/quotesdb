@@ -15,7 +15,7 @@
                     id,
                     category
                     FROM ".$this->table."
-                    ORDER BY category ASC";
+                    ORDER BY category_id ASC";
         
 
         $stmt = $this->conn->prepare($query);
