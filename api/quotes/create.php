@@ -29,8 +29,8 @@
         $auth->id = $data->author_id;
         $cat->id = $data->category_id;
 
-        if (!$auth->read_single()) echo json_encode(array('message' => 'author_id Does Not Exsist'));
-        else if (!$cat->read_single()) echo json_encode(array('message' => 'category_id Does Not Exsist'));
+        if (!$auth->read_single()) echo json_encode(array('message' => 'author_id Does Not Exist'));
+        else if (!$cat->read_single()) echo json_encode(array('message' => 'category_id Does Not Exist'));
 
 
         else  if ($quo->create()){
