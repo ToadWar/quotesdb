@@ -24,7 +24,7 @@
    }
  else {
    $cat_arr = array(
-     'Message' => 'category_id Not Found'
+     'message' => 'category_id Not Found'
    );
 
  }

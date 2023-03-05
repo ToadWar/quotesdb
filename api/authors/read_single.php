@@ -24,7 +24,7 @@
     }
   else {
     $auth_arr = array(
-      'Message' => 'author_id Not Found'
+      'message' => 'author_id Not Found'
     );
 
   }

@@ -19,9 +19,10 @@
                 
                 if ($this->author_id && $this->category_id) {
                     $query = "SELECT
-                            q.id, q.quote,
-                            c.category as Category,
-                            a.author as Author                
+                          q.id, 
+                            q.quote,
+                            a.id as author,
+                            c.id as category                 
                             FROM " . $this->table ." q
                             INNER JOIN authors a on q.author_id = a.id
                             INNER JOIN categories c on q.category_id = c.id 
@@ -29,9 +30,10 @@
                     }
                 else if ($this->author_id){
                     $query = "SELECT
-                            q.id, q.quote,
-                            c.category as Category,
-                            a.author as Author                
+                            q.id, 
+                            q.quote,
+                            a.id as author,
+                            c.id as category                  
                              FROM " . $this->table ." q
                             INNER JOIN authors a on q.author_id = a.id
                             INNER JOIN categories c on q.category_id = c.id 
@@ -40,9 +42,10 @@
                 else if ($this->category_id)  
                     {
                         $query = "SELECT
-                            q.id, q.quote,
-                            c.category as Category,
-                            a.author as Author                
+                            q.id, 
+                            q.quote,
+                            a.id as author,
+                            c.id as category                
                             FROM " . $this->table ." q
                             INNER JOIN authors a on q.author_id = a.id
                             INNER JOIN categories c on q.category_id = c.id 
@@ -52,8 +55,8 @@
                         $query = "SELECT
                             q.id, 
                             q.quote,
-                            c.category as Category,
-                            a.author as Author                
+                            a.id as author,
+                            c.id as category               
                             FROM " . $this->table ." q
                             INNER JOIN authors a on q.author_id = a.id
                             INNER JOIN categories c on q.category_id = c.id 
@@ -73,9 +76,10 @@
         public function read_single() {
           
             $query = "SELECT
-                    q.id, q.quote,
-                    c.category as Category,
-                    a.author as Author                
+                            q.id, 
+                            q.quote,
+                            a.id as author,
+                            c.id as category                
                     FROM " . $this->table ." q
                     INNER JOIN authors a on q.author_id = a.id
                     INNER JOIN categories c on q.category_id = c.id 
