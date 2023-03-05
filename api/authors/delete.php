@@ -17,7 +17,7 @@
     $auth->id = isset($_GET['id']) ? $_GET['id']: die();
 
     if ($auth->delete()){
-        echo json_encode(array('message' => 'Author id '.$auth->id.' deleted'));
+        echo json_encode(array('deleted' => $auth->id));
     }
     else
     {
