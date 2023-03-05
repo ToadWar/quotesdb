@@ -22,5 +22,5 @@
     }
     else
     {
-        echo json_encode(array('message' => 'Author not added'));
+        echo json_encode(array('message' => 'Missing Required Parameters'));
     }

@@ -24,5 +24,5 @@
     }
     else
     {
-        echo json_encode(array('message' => 'author_id does not exist'));
+        echo json_encode(array('message' => 'author_id Not Found'));
     }
