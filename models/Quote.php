@@ -21,8 +21,8 @@
                     $query = "SELECT
                           q.id, 
                             q.quote,
-                            a.id as author,
-                            c.id as category                 
+                            a.id as author_id,
+                            c.id as category_id                 
                             FROM " . $this->table ." q
                             INNER JOIN authors a on q.author_id = a.id
                             INNER JOIN categories c on q.category_id = c.id 
@@ -32,8 +32,8 @@
                     $query = "SELECT
                             q.id, 
                             q.quote,
-                            a.id as author,
-                            c.id as category                  
+                            a.id as author_id,
+                            c.id as category_id                  
                              FROM " . $this->table ." q
                             INNER JOIN authors a on q.author_id = a.id
                             INNER JOIN categories c on q.category_id = c.id 
@@ -44,8 +44,8 @@
                         $query = "SELECT
                             q.id, 
                             q.quote,
-                            a.id as author,
-                            c.id as category                
+                            a.id as author_id,
+                            c.id as category_id                
                             FROM " . $this->table ." q
                             INNER JOIN authors a on q.author_id = a.id
                             INNER JOIN categories c on q.category_id = c.id 
@@ -55,8 +55,8 @@
                         $query = "SELECT
                             q.id, 
                             q.quote,
-                            a.id as author,
-                            c.id as category               
+                            a.id as author_id,
+                            c.id as category_id               
                             FROM " . $this->table ." q
                             INNER JOIN authors a on q.author_id = a.id
                             INNER JOIN categories c on q.category_id = c.id 
@@ -78,8 +78,8 @@
             $query = "SELECT
                             q.id, 
                             q.quote,
-                            a.id as author,
-                            c.id as category                
+                            a.id as author_id,
+                            c.id as category_id                
                     FROM " . $this->table ." q
                     INNER JOIN authors a on q.author_id = a.id
                     INNER JOIN categories c on q.category_id = c.id 

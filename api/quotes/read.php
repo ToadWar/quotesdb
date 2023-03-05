@@ -28,8 +28,8 @@
         $quote_item = array(
             'id' => $id,
             'quote' => html_entity_decode($quote),
-            'author_id' => $author_id,
-            'category_id' => $category_id
+            'category_id' => $category_id,
+            'author_id' => $author_id
         );
 
      array_push($quotes_arr, $quote_item);

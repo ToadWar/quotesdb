@@ -18,7 +18,7 @@
     $auth->author = $data->author;
 
     if ($auth->create()){
-        echo json_encode(array('message' => 'Author added'));
+        echo json_encode(array('message' => 'author created'));
     }
     else
     {
