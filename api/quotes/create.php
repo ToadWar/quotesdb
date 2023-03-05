@@ -20,6 +20,7 @@
 
     $data = json_decode(file_get_contents("php://input"));
 
+    if ($data->quote && $data->author_id && $data->category_id){
                
         $quo->quote = $data->quote;
         $quo->author_id = $data->author_id;
@@ -27,13 +28,13 @@
 
         $auth->id = $data->author_id;
         $cat->id = $data->category_id;
-
+        
         $auth->read_single();
         $cat->read_single();
 
-        if (!$quo->quote || !$quo->author_id || !$quo->category_id)  {echo json_encode(array("message"=>"Failed to Add Category"));}
-        else if (!$auth->author) { echo json_encode(array('message' => 'author_id Not Found')); }
-        else if (!$cat->category) { echo json_encode(array('message' => 'category_id Not Found'));}
+        if (!$auth->author) { echo json_encode(array('message' => 'author_id Not Found')); }
+        else if ($cat->category) { echo json_encode(array('message' => 'category_id Not Found'));}
+
         else if ($quo->create()){
             echo json_encode(array('id'=> $db->lastInsertId(),'quote'=> $quo->quote, 'author_id'=>$quo->author_id, 'category_id'=>$quo->category_id));
         }
@@ -42,5 +43,7 @@
             echo json_encode(array('message' => 'Quote not added'));
         }
     
-    
-
+    }
+    else {
+        echo json_encode(array('message' => 'Missing Required Parameters'));
+    }

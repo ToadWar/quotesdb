@@ -15,14 +15,12 @@
 
     $data = json_decode(file_get_contents("php://input"));
     
-    $cat->category = $data->category;
+   
 
-    if(!$cat->category){echo json_encode(array('message' => 'Missing Required Parameters')); }
-    else if ($cat->create()){
+    if(!$data->category){echo json_encode(array('message' => 'Missing Required Parameters')); }
+    else {
+        $cat->category = $data->category;
+        $cat->create();
         echo json_encode(array('id'=> $db->lastInsertId(),'category'=>$cat->category));
     }
-    else
-    {
-        echo json_encode(array("message"=>"Failed to Add Category"));
-  
-    }
+
