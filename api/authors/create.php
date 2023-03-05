@@ -16,9 +16,10 @@
     $data = json_decode(file_get_contents("php://input"));
     
     $auth->author = $data->author;
+     
 
     if ($auth->create()){
-        echo json_encode(array('message' => 'author created'));
+        echo json_encode(array('message' => 'created', 'id'=> $db->lastInsertId(),'author'=>$auth->author));
     }
     else
     {

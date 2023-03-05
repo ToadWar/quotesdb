@@ -34,7 +34,7 @@
 
 
         else  if ($quo->create()){
-            echo json_encode(array('message' => 'Quote added'));
+            echo json_encode(array('message' => 'created', 'id'=> $db->lastInsertId(),'quote'=> $quo->quote, 'author_id'=>$quo->author_id, 'category_id'=>$quo->category_id));
         }
         else
         {
