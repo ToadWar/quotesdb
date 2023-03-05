@@ -19,7 +19,7 @@
      
 
     if ($auth->create()){
-        echo json_encode(array('message' => 'created', 'id'=> $db->lastInsertId(),'author'=>$auth->author));
+        echo json_encode(array('id'=> $db->lastInsertId(),'author'=>$auth->author));
     }
     else
     {

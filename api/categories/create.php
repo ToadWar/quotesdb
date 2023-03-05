@@ -18,7 +18,7 @@
     $cat->category = $data->category;
 
     if ($cat->create()){
-        echo json_encode(array('message' => 'created', 'id'=> $db->lastInsertId(),'category'=>$cat->category));
+        echo json_encode(array('id'=> $db->lastInsertId(),'category'=>$cat->category));
     }
     else
     {
