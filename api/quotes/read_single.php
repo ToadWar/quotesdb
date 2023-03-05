@@ -29,7 +29,7 @@
    }
  else {
    $quote_arr = array(
-     'message' => 'quote_id Not Found'
+     'message' => 'No Quotes Found'
    );
 
  }

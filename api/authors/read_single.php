@@ -29,4 +29,4 @@
 
   }
 
-  echo(json_encode($auth_arr));
+  print_r(json_encode($auth_arr));
