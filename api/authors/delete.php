@@ -17,9 +17,11 @@
     $auth->id = isset($_GET['id']) ? $_GET['id']: die();
 
     if ($auth->delete()){
-        print_r(json_encode(array('deleted' => $auth->id)));
+        $message = array('deleted' => $auth->id);
     }
     else
     {
-        echo json_encode(array('message' => 'No Authors Found!'));
+        $message = array('message' => 'No Authors Found!');
     }
+
+    print_r(json_encode($message));
