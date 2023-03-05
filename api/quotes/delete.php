@@ -17,9 +17,10 @@
     $quo->id = isset($_GET['id']) ? $_GET['id']: die();
 
     if ($quo->delete()){
-        echo json_encode(array('message' => 'Quote id '.$quo->id.' deleted'));
+        $message = array('message' => 'Quote id '.$quo->id.' deleted');
     }
     else
     {
-        echo json_encode(array('message' => 'No Quotes Found'));
+        $message = array('message' => 'No Quotes Found');
     }
+    print_r(json_encode($message));
