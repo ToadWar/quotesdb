@@ -24,7 +24,7 @@
         extract($row);
         $author_item = array(
             'id' => $id,
-            'Author' => $author
+            'author' => $author
         );
 
      array_push($authors_arr, $author_item);

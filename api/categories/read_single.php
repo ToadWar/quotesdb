@@ -19,7 +19,7 @@
 
     $cat_arr = array(
       'id' => $cat->id,
-      'Category' => $cat->category
+      'category' => $cat->category
     );
    }
  else {

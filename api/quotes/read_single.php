@@ -21,10 +21,10 @@
   if($quo->quote) {
 
     $quote_arr = array(
-      'Id' => $quo->id,
-      'Quote' => $quo->quote,
-      'Author' => $quo->author,
-      'Category' => $quo->category
+      'id' => $quo->id,
+      'quote' => $quo->quote,
+      'author' => $quo->author,
+      'category' => $quo->category
     );
    }
  else {

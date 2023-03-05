@@ -26,10 +26,10 @@
     while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
         extract($row);
         $quote_item = array(
-            'Id' => $id,
-            'Quote' => html_entity_decode($quote),
-            'Author' => $author,
-            'Category' => $category
+            'id' => $id,
+            'quote' => html_entity_decode($quote),
+            'author' => $author,
+            'category' => $category
         );
 
      array_push($quotes_arr, $quote_item);

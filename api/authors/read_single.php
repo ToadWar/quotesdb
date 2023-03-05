@@ -19,7 +19,7 @@
 
      $auth_arr = array(
        'id' => $auth->id,
-        'Author' => $auth->author
+        'author' => $auth->author
      );
     }
   else {
