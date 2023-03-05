@@ -18,7 +18,7 @@
   if ($num > 0)
   {
     $authors_arr = array();
-    $authors_arr['Authors'] = array();
+    
 
     while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
         extract($row);
@@ -27,7 +27,7 @@
             'Author' => $author
         );
 
-     array_push($authors_arr['Authors'], $author_item);
+     array_push($authors_arr, $author_item);
 
     }
 

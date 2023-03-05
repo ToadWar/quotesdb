@@ -15,7 +15,7 @@
                     id,
                     author
                     FROM ".$this->table."
-                    ORDER BY author_id ASC";
+                    ORDER BY id ASC";
         
 
         $stmt = $this->conn->prepare($query);
