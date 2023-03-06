@@ -20,7 +20,7 @@
     $auth->id = $data->id;
 
     if ($auth->update()){
-        echo json_encode(array('message' => 'Author updated'));
+        echo json_encode(array('id'=> $db->lastInsertId(),'author'=>$auth->author));
     }
     else
     {

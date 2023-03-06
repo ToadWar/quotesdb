@@ -20,7 +20,7 @@
     $cat->id = $data->id;
 
     if ($cat->update()){
-        echo json_encode(array('message' => 'Category updated'));
+        echo json_encode(array('id'=> $db->lastInsertId(),'category'=>$cat->category));
     }
     else
     {
