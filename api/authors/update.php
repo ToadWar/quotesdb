@@ -2,7 +2,7 @@
 
     header('Access-Control-Allow-Origin: *');
     header('Content-Type:application/json');
-    header('Access-Control-Allow-Methods: PUT');
+    header('Access-Control-Allow-Methods: POST, PUT');
     header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, Access-Control-Allow-Methods,Content-Type, Authorization, X-Requested-With');
     
     include_once '../../config/Database.php';
@@ -20,7 +20,7 @@
     $auth->id = $data->id;
 
     if ($auth->update()){
-        echo json_encode(array('id'=> $db->lastInsertId(),'author'=>$auth->author));
+        echo json_encode(array('id'=>$auth->id,'author'=>$auth->author));
     }
     else
     {

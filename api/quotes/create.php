@@ -33,7 +33,7 @@
         $cat->read_single();
 
         if (!$auth->author) { echo json_encode(array('message' => 'author_id Not Found')); }
-        else if ($cat->category) { echo json_encode(array('message' => 'category_id Not Found'));}
+        else if (!$cat->category) { echo json_encode(array('message' => 'category_id Not Found'));}
 
         else if ($quo->create()){
             echo json_encode(array('id'=> $db->lastInsertId(),'quote'=> $quo->quote, 'author_id'=>$quo->author_id, 'category_id'=>$quo->category_id));
