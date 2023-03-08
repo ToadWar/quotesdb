@@ -39,13 +39,13 @@
     
     $auth->read_single();
     if (!$auth->author) {
-        echo json_encode(array('message' => 'author_id Does Not Exist'));
+        echo json_encode(array('message' => 'author_id Not Found'));
         exit();
     }
     
     $cat->read_single();
     if (!$cat->category) {
-        echo json_encode(array('message' => 'category_id Does Not Exist'));
+        echo json_encode(array('message' => 'category_id Not Found'));
         exit();
     }
 
