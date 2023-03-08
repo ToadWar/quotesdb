@@ -17,12 +17,16 @@
     $data = json_decode(file_get_contents("php://input"));
 
     if (!isset($data->id)){
-        echo(json_encode(array('message' => 'No Quotes Found')));
+        echo(json_encode(array('message'=> 'Missing Required Parameters')));
+        exit();
     }
-    else
-    {
-        $quo->id = $data->id;
-        $auth->delete();
+
+    $quo->id = $data->id;
+    if ($auth->delete())
+     {
         echo(json_encode(array('id'=>$auth->id)));
+    }
+    else{
+        echo(json_encode(array('message'=> 'No Quotes Found')));
     }
     
