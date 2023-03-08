@@ -22,7 +22,7 @@
     }
 
     $quo->id = $data->id;
-    if ($auth->delete())
+    if ($quo->delete())
      {
         echo(json_encode(array('id'=>$auth->id)));
     }
