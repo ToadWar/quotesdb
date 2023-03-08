@@ -17,7 +17,8 @@
     
    
 
-    if(!$data->category){echo json_encode(array('message' => 'Missing Required Parameters')); }
+    if(!$data){echo json_encode(array('message' => 'Missing Required Parameters'));
+    }
     else {
         $cat->category = $data->category;
         $cat->create();

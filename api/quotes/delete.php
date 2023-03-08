@@ -14,13 +14,15 @@
   
     $quo = new Quote($db);
 
-    $quo->id = isset($_GET['id']) ? $_GET['id']: die();
+    $data = json_decode(file_get_contents("php://input"));
 
-    if ($quo->delete()){
-        $message = array('message' => 'Quote id '.$quo->id.' deleted');
+    if (!$quo){
+        echo(json_encode(array('message' => 'Missing Required Parameters')));
     }
     else
     {
-        $message = array('message' => 'No Quotes Found');
+        $quo->id = $data->id;
+        $auo->delete();
+        echo(json_encode(array('id'=>$auth->id)));
     }
-    print_r(json_encode($message));
+    

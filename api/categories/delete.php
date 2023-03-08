@@ -14,12 +14,15 @@
   
     $cat = new Category($db);
 
-    $cat->id = isset($_GET['id']) ? $_GET['id']: die();
+    $data = json_decode(file_get_contents("php://input"));
 
-    if ($cat->delete()){
-        echo json_encode(array('message' => 'Category id '.$cat->id.' deleted'));
+    if (!$data){
+        echo(json_encode(array('message' => 'Missing Required Parameters')));
     }
     else
     {
-        echo json_encode(array('message' => 'No Categories found'));
+        $cat->id = $data->id;
+        $cat->delete();
+        echo(json_encode(array('id'=>$cat->id)));
     }
+        

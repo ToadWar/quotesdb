@@ -13,11 +13,10 @@
   
     $auth = new Author($db);
 
-    $data = json_decode(file_get_contents("php://input"));
     
-   
-   if (!$data->author) { echo json_encode(array('message' => 'Missing Required Parameters')); 
-        die();
+    $data = json_decode(file_get_contents("php://input"));
+       
+   if (!$data) { echo json_encode(array('message' => 'Missing Required Parameters'));
     }
 
    else {

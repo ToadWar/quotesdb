@@ -14,14 +14,15 @@
   
     $auth = new Author($db);
 
-    $auth->id = isset($_GET['id']) ? $_GET['id']: die();
+    $data = json_decode(file_get_contents("php://input"));
 
-    if ($auth->delete()){
-        $message = array('id' => $auth->id);
+    if (!$data){
+        echo(json_encode(array('message' => 'Missing Required Parameters')));
     }
     else
     {
-        $message = array('message' => 'No Authors Found!');
+        $auth->id = $data->id;
+        $auth->delete();
+        echo(json_encode(array('id'=>$auth->id)));
+        
     }
-
-    print_r(json_encode($message));
