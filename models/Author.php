@@ -49,14 +49,8 @@
             else {
                 return false;
             }
-            
-    
-
-
 
         }
-
-              
 
         public function create() {
             $query = "INSERT INTO ".$this->table." (author) VALUES(:author)";

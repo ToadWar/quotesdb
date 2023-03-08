@@ -54,9 +54,7 @@
             }
     
 
-        }
-
-              
+        }    
 
         public function create() {
             $query = "INSERT INTO ".$this->table." (category) VALUES(:category)";
@@ -115,9 +113,7 @@
                 else {
                     printf("Error: %s. \n", $stmt->error);
                     return false;
-                }     
-                
+                }                     
         }
-
 
     }
