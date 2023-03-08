@@ -15,7 +15,7 @@
 
   
 
-  if($cat->read_single();) {
+  if($cat->read_single()) {
 
     echo json_encode(array(
       'id' => $cat->id,

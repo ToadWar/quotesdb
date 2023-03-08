@@ -15,7 +15,7 @@
 
   
   
-  if($auth->read_single()  ) {
+  if($auth->read_single()) {
 
      echo json_encode(array(
        'id' => $auth->id,
@@ -26,7 +26,7 @@
     echo json_encode(array(
       'message' => 'author_id Not Found'
     ));
-    return false;
+  
     
 
   }

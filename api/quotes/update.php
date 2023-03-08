@@ -20,7 +20,13 @@
 
     $data = json_decode(file_get_contents("php://input"));
     
-    if ($data->id && $data->quote && $data->author_id && $data->category_id){
+    if (!isset($data->id) || !isset($data->quote) || !isset($data->author_id) || !isset($data->category_id))
+    {
+        echo json_encode(array('message' => 'Missing Required Parameters'));
+        exit();
+
+    }
+
     $quo->id = $data->id;
     $quo->quote = $data->quote;
     $quo->author_id = $data->author_id;
@@ -44,7 +50,4 @@
             echo json_encode(array('message' => 'No Quotes Found'));
         }
     
-    }
-    else {
-        echo json_encode(array('message' => 'Missing Required Parameters'));
-    }
+

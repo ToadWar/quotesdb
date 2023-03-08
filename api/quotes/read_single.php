@@ -12,11 +12,7 @@
   $quo = new Quote($db);
 
   $quo->id = isset($_GET['id']) ? $_GET['id']: die();
- 
-
-  
-
-  
+   
 
   if($quo->read_single()) {
 

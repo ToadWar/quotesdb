@@ -86,7 +86,15 @@
                 $stmt->bindParam(':id', $this->id);
 
                 if ($stmt->execute())   
-                { return true;}     
+                { 
+                    if ($stmt->rowCount() == 0)
+                    { 
+                        return false;
+                    }
+                  else {
+                        return true;
+                    }   
+                }  
                 else {
                     printf("Error: %s. \n", $stmt->error);
                     return false;
