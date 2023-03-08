@@ -24,7 +24,7 @@
     $quo->id = $data->id;
     if ($quo->delete())
      {
-        echo(json_encode(array('id'=>$auth->id)));
+        echo(json_encode(array('id'=>$quo->id)));
     }
     else{
         echo(json_encode(array('message'=> 'No Quotes Found')));
