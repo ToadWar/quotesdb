@@ -17,16 +17,16 @@
 
   if($auth->author) {
 
-     $auth_arr = array(
+     echo json_encode(array(
        'id' => $auth->id,
         'author' => $auth->author
-     );
+     ));
     }
   else {
-    $auth_arr = array(
+    echo json_encode(array(
       'message' => 'author_id Not Found'
-    );
+    ));
+    return false;
+    
 
   }
-
-  print_r(json_encode($auth_arr));

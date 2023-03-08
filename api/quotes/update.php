@@ -21,24 +21,28 @@
     $data = json_decode(file_get_contents("php://input"));
     
     if ($data->id && $data->quote && $data->author_id && $data->category_id){
-    $quo->id = $data_id;
+    $quo->id = $data->id;
     $quo->quote = $data->quote;
     $quo->author_id = $data->author_id;
     $quo->category_id = $data->category_id;
 
     $auth = new Author($db);
     $cat = new Category($db);
+    $auth->id = $quo->author_id;
+    $cat->id = $quo->category_id;
 
-    if (!$auth->read_single()) echo json_encode(array('message' => 'author_id Does Not Exist'));
-    else if (!$cat->read_single()) echo json_encode(array('message' => 'category_id Does Not Exist'));
 
-    else if ($quo->create()){
-        echo json_encode(array('id'=> $quo->id,'quote'=> $quo->quote, 'author_id'=>$quo->author_id, 'category_id'=>$quo->category_id));
-    }
-    else
-    {
-        echo json_encode(array('message' => 'quote_id does not exist'));
-    }
+        if (!$auth->read_single()) {echo json_encode(array('message' => 'author_id Does Not Exist'));
+        die();}
+        else if ($cat->read_single() == false) {echo json_encode(array('message' => 'category_id Does Not Exist'));}
+
+        else if ($quo->create()){
+            echo json_encode(array('id'=>$quo->id,'quote'=>$quo->quote,'author_id'=>$quo->author_id,'category_id'=>$quo->category_id));
+        }
+        else
+        {
+            echo json_encode(array('message' => 'No Quotes Found'));
+        }
     
     }
     else {

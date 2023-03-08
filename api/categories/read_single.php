@@ -17,16 +17,18 @@
 
   if($cat->category) {
 
-    $cat_arr = array(
+    echo json_encode(array(
       'id' => $cat->id,
       'category' => $cat->category
-    );
+    ));
    }
  else {
-   $cat_arr = array(
+    echo json_encode(array(
      'message' => 'category_id Not Found'
-   );
+   ));
+
+   return false;
 
  }
 
-  print_r(json_encode($cat_arr));
+ 

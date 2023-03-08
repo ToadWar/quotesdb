@@ -32,8 +32,7 @@
                         author
                         FROM ".$this->table."
                         WHERE id = :id
-                        LIMIT 1 OFFSET 0";
-                    
+                        LIMIT 1 OFFSET 0";                    
             
     
             $stmt = $this->conn->prepare($query);

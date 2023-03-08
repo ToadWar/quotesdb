@@ -15,8 +15,9 @@
 
     
     $data = json_decode(file_get_contents("php://input"));
+    
        
-   if (!$data) { echo json_encode(array('message' => 'Missing Required Parameters'));
+   if (!isset($data->author)) { echo json_encode(array('message' => 'Missing Required Parameters'));
     }
 
    else {
