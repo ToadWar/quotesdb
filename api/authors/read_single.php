@@ -13,9 +13,9 @@
 
   $auth->id = isset($_GET['id']) ? $_GET['id']: die();
 
-  $auth->read_single();
-
-  if($auth->author) {
+  
+  
+  if($auth->read_single()  ) {
 
      echo json_encode(array(
        'id' => $auth->id,

@@ -13,9 +13,9 @@
 
   $cat->id = isset($_GET['id']) ? $_GET['id']: die();
 
-  $cat->read_single();
+  
 
-  if($cat->category) {
+  if($cat->read_single();) {
 
     echo json_encode(array(
       'id' => $cat->id,

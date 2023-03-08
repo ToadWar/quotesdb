@@ -47,6 +47,10 @@
             {
                 $this->id = $row['id'];
                 $this->category = $row['category'];
+                return true;
+            }
+            else {
+                return false;
             }
     
 

@@ -44,6 +44,10 @@
             if($row){
                 $this->id = $row['id'];
                 $this->author = $row['author'];
+                return true;
+            }
+            else {
+                return false;
             }
             
     

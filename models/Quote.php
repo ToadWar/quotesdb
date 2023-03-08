@@ -100,6 +100,10 @@
             $this->quote = $row['quote'];
             $this->author = $row['author'];
             $this->category = $row['category'];
+            return true;
+        }
+        else {
+            return false;
         }
 
         }

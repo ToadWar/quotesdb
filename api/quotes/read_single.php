@@ -14,11 +14,11 @@
   $quo->id = isset($_GET['id']) ? $_GET['id']: die();
  
 
-  $quo->read_single();
+  
 
   
 
-  if($quo->quote) {
+  if($quo->read_single()) {
 
     $quote_arr = array(
       'id' => $quo->id,
