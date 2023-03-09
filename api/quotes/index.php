@@ -1,5 +1,5 @@
 <?php
-
+    // index for quotes
      header('Access-Control-Allow-Origin: *');
      header('Content-Type: application/json');
      $method = $_SERVER['REQUEST_METHOD'];
@@ -11,7 +11,7 @@
      } 
 
 
-
+    // If statement for type of request
      if ($method === 'GET') {
         try {
             if (isset($_GET['id']) )

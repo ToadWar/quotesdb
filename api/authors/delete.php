@@ -1,5 +1,5 @@
 <?php
-
+    //Delete for authors
     header('Access-Control-Allow-Origin: *');
     header('Content-Type:application/json');
     header('Access-Control-Allow-Methods: DELETE');
@@ -8,16 +8,17 @@
     include_once '../../config/Database.php';
     include_once '../../models/Author.php';
   
-  
+    // create db connection
     $database = new Database();
     $db = $database->connect();
   
-    $auth = new Author($db);
+    $auth = new Author($db); // create author object
 
-    $data = json_decode(file_get_contents("php://input"));
+    $data = json_decode(file_get_contents("php://input")); // get input
 
+    // get author data then delete
     if (!isset($data->id)){
-        echo(json_encode(array('message' => 'Missing Required Parameters')));
+        echo(json_encode(array('message' => 'Missing Required Parameters'))); // if no data send message
     }
     else
     {

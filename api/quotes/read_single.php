@@ -5,15 +5,17 @@
   include_once '../../config/Database.php';
   include_once '../../models/Quote.php';
 
-
+  //create database connection
   $database = new Database();
   $db = $database->connect();
 
+  //create quote object
   $quo = new Quote($db);
 
+  // get data
   $quo->id = isset($_GET['id']) ? $_GET['id']: die();
    
-
+  // read and create an array of result
   if($quo->read_single()) {
 
     $quote_arr = array(
@@ -23,6 +25,7 @@
       'category' => $quo->category
     );
    }
+   // if fail message
  else {
    $quote_arr = array(
      'message' => 'No Quotes Found'
@@ -30,4 +33,4 @@
 
  }
 
-  print_r(json_encode($quote_arr));
+  echo(json_encode($quote_arr));
